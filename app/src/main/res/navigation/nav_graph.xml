@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.theaverageguy.roompractice.ui.fragment.Home"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_add"
+            app:destination="@id/add" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.theaverageguy.roompractice.room.modelClasses.PhoneBook" />
+    </fragment>
+    <fragment
+        android:id="@+id/add"
+        android:name="com.theaverageguy.roompractice.ui.fragment.Add"
+        android:label="Add Contact"
+        tools:layout="@layout/fragment_add">
+        <action
+            android:id="@+id/action_add_to_home"
+            app:destination="@id/home" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.theaverageguy.roompractice.room.modelClasses.PhoneBook" />
+    </fragment>
+</navigation>
